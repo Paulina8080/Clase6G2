@@ -11,11 +11,12 @@ def main():
                        \n3- Ver número de mascotas en el servicio 
                        \n4- Ver medicamentos que se están administrando
                        \n5- Eliminar mascota 
-                       \n6- Salir 
+                       \n6. Eliminar medicamento de mascota
+                       \n7- Salir 
                        \nUsted ingresó la opción: ''' ))
 
         if menu == 1:
-            if servicio_hospitalario.verNumeroMascotas() >= 10:
+            if servicio_hospitalario.verNumeroMascotas() >= 10: #Creo que esto de aquí ya no va
                 print("No hay espacio dispnible...")
                 continue
             historia = int(input(" ingrese la historia clinica de la mascota: "))
@@ -86,8 +87,11 @@ def main():
                 print("Mascota eliminada del sistema con exito")
             else:
                 print("No se ha podido eliminar la mascota")
+        
+        elif menu == 6:
+            cambio= input("Ingrese nombre del medicamento a eliminar")
 
-        elif menu==6:
+        elif menu==7:
             print("Usted ha salido del sistema de servicio de hospitalización...")
             break
         
