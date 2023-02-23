@@ -1,4 +1,6 @@
+from datetime import datetime
 class Mascota:
+    from datetime import datetime
     
     def __init__(self):
         self.__nombre= " "
@@ -6,7 +8,8 @@ class Mascota:
         self.__tipo=" "
         self.__peso=" "
         self.__fecha_ingreso=" "
-        self.__medicamento=""
+        self.__lista_medicamento=""
+
 
     def verNombre(self):
         return self.__nombre
@@ -19,7 +22,7 @@ class Mascota:
     def verFecha(self):
         return self.__fecha_ingreso
     def ver_Medicamento(self):
-        return self.__medicamento 
+        return self.__lista_medicamento 
             
     def asignarNombre(self,n):
         self.__nombre=n
@@ -29,10 +32,10 @@ class Mascota:
         self.__tipo=t
     def asignarPeso(self,p):
         self.__peso=p
-    def asignarFecha(self,f):
-        self.__fecha_ingreso=f
+    def asignarFecha(self):
+        self.__fecha_ingreso= datetime.now
     def asignarMedicamento(self,n):
-        self.__medicamento = n 
+        self.__lista_medicamento = n 
 
 
 class sistemaV:
@@ -60,6 +63,7 @@ class sistemaV:
             if historia == masc.verHistoria():
                 return masc.verFecha() 
         return None
+#Hasta aquí cambie los medicamentos
 
     def verMedicamento(self,historia):
         #busco la mascota y devuelvo el atributo solicitado
@@ -74,7 +78,7 @@ class sistemaV:
                 # del self.__lista_mascotas[masc]
                 self.__lista_mascotas.remove(masc)  #opcion con el pop
                 return True  #eliminado con exito
-        return False 
+        return False
 
 
 class Medicamento:

@@ -2,6 +2,8 @@ from sistemaVet import *
 
 def main():
     servicio_hospitalario = sistemaV()
+    cani= {}
+    cat= {}
     while True:
         menu=int(input('''\nIngrese una opción: 
                        \n1- Ingresar una mascota 
@@ -25,6 +27,24 @@ def main():
                 medicamento=Medicamento()
                 medicamento.asignarNombre(input("Ingrese nombre del medicamento: "))
                 medicamento.asignarDosis(int(input("Ingrese dosis del medicamento: ")))
+                if tipo== "felino":
+                    m= 0
+                    for i in cat.keys():
+                        m+=1
+                    if m >= 7:
+                        print("No se permite el ingreso de la mascota, capacidad a tope")
+                        continue
+                    else:
+                      cat[historia]= nombre
+                elif tipo== "canino":
+                    m= 0
+                    for i in cani.keys():
+                        m+=1
+                    if m >= 7:
+                        print("No se permite el ingreso de la mascota, capacidad a tope")
+                        continue
+                    else:
+                      cani[historia]= nombre
                 mas = Mascota()
                 mas.asignarNombre(nombre)
                 mas.asignarHistoria(historia)
@@ -33,6 +53,7 @@ def main():
                 mas.asignarFecha(fecha)
                 mas.asignarMedicamento(medicamento)
                 servicio_hospitalario.ingresarMascota(mas)
+#Hasta acá lo llevo
 
             else:
                 print("Ya existe una mascota con el numero de historia clínica ingresado.") 
